@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = NSLocalizedString(@"FileList", @"File Manager");
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
@@ -36,6 +36,27 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+
+    // Add existing files from bundle/Documents
+    NSURL *url = [NSURL URLWithString:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]];
+    NSError *error = nil;
+    NSArray *properties = @[NSURLLocalizedNameKey,
+                           NSURLCreationDateKey, NSURLLocalizedTypeDescriptionKey];
+    
+    NSArray *array = [[NSFileManager defaultManager]
+                      contentsOfDirectoryAtURL:url
+                      includingPropertiesForKeys:properties
+                      options:(NSDirectoryEnumerationSkipsHiddenFiles)
+                      error:&error];
+    
+    if (!!array)
+    {
+        for (NSURL *u in array)
+        {
+            NSDictionary *obj = @{@"url": u.absoluteString, @"text": [u.absoluteString lastPathComponent], @"document": [NSNull null]};
+            [_objects addObject:obj];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,8 +71,9 @@
         _objects = [[NSMutableArray alloc] init];
     }
     [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"AddPDF", @"Add new PDF from URL...") message:@"Insert URL for your PDF" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [alert show];
 }
 
 #pragma mark - Table View
@@ -76,9 +98,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    NSDictionary *object = _objects[indexPath.row];
+    cell.textLabel.text = object[@"text"];
     return cell;
 }
 
@@ -116,8 +137,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    NSDictionary *object = _objects[indexPath.row];
+    self.detailViewController.detailItem = object[@"document"];
+}
+
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex > 0)
+    {
+        NSString *url = [alertView textFieldAtIndex:0].text;
+        NSString *fileName = [url lastPathComponent];
+        NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        [fileData writeToFile:[documents stringByAppendingPathComponent:fileName] atomically:YES];
+        NSDictionary *obj = @{@"url": url, @"text": fileName, @"document": [NSNull null]};
+        [_objects insertObject:obj atIndex:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 @end

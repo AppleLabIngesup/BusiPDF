@@ -36,10 +36,10 @@
 		F259712116C2C4B800DEEBDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F259712316C2C4B800DEEBDC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F259712516C2C4B800DEEBDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F259712716C2C4B800DEEBDC /* ALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMasterViewController.h; sourceTree = "<group>"; };
-		F259712816C2C4B800DEEBDC /* ALMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMasterViewController.m; sourceTree = "<group>"; };
-		F259712A16C2C4B800DEEBDC /* ALDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDetailViewController.h; sourceTree = "<group>"; };
-		F259712B16C2C4B800DEEBDC /* ALDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDetailViewController.m; sourceTree = "<group>"; };
+		F259712716C2C4B800DEEBDC /* ALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ALMasterViewController.h; path = ../ALMasterViewController.h; sourceTree = "<group>"; };
+		F259712816C2C4B800DEEBDC /* ALMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ALMasterViewController.m; path = ../ALMasterViewController.m; sourceTree = "<group>"; };
+		F259712A16C2C4B800DEEBDC /* ALDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ALDetailViewController.h; path = ../ALDetailViewController.h; sourceTree = "<group>"; };
+		F259712B16C2C4B800DEEBDC /* ALDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ALDetailViewController.m; path = ../ALDetailViewController.m; sourceTree = "<group>"; };
 		F259712E16C2C4B900DEEBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALMasterViewController.xib; sourceTree = "<group>"; };
 		F259713116C2C4B900DEEBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALDetailViewController.xib; sourceTree = "<group>"; };
 		F259713816C2C4DA00DEEBDC /* BusiPDF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BusiPDF.entitlements; sourceTree = "<group>"; };
@@ -59,6 +59,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69FB7E4816C845810002D763 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F259711E16C2C4B800DEEBDC /* ALAppDelegate.h */,
+				F259711F16C2C4B800DEEBDC /* ALAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		69FB7E4916C845B70002D763 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				69FB7E4A16C8461E0002D763 /* Master */,
+				69FB7E4B16C846250002D763 /* Detail */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		69FB7E4A16C8461E0002D763 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				F259712716C2C4B800DEEBDC /* ALMasterViewController.h */,
+				F259712816C2C4B800DEEBDC /* ALMasterViewController.m */,
+				F259712D16C2C4B900DEEBDC /* ALMasterViewController.xib */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		69FB7E4B16C846250002D763 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F259712A16C2C4B800DEEBDC /* ALDetailViewController.h */,
+				F259712B16C2C4B800DEEBDC /* ALDetailViewController.m */,
+				F259713016C2C4B900DEEBDC /* ALDetailViewController.xib */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		F259710316C2C4B800DEEBDC = {
 			isa = PBXGroup;
 			children = (
@@ -89,15 +127,8 @@
 		F259711516C2C4B800DEEBDC /* BusiPDF */ = {
 			isa = PBXGroup;
 			children = (
-				F259713816C2C4DA00DEEBDC /* BusiPDF.entitlements */,
-				F259711E16C2C4B800DEEBDC /* ALAppDelegate.h */,
-				F259711F16C2C4B800DEEBDC /* ALAppDelegate.m */,
-				F259712716C2C4B800DEEBDC /* ALMasterViewController.h */,
-				F259712816C2C4B800DEEBDC /* ALMasterViewController.m */,
-				F259712A16C2C4B800DEEBDC /* ALDetailViewController.h */,
-				F259712B16C2C4B800DEEBDC /* ALDetailViewController.m */,
-				F259712D16C2C4B900DEEBDC /* ALMasterViewController.xib */,
-				F259713016C2C4B900DEEBDC /* ALDetailViewController.xib */,
+				69FB7E4916C845B70002D763 /* Controllers */,
+				69FB7E4816C845810002D763 /* AppDelegate */,
 				F259711616C2C4B800DEEBDC /* Supporting Files */,
 			);
 			path = BusiPDF;
@@ -106,6 +137,7 @@
 		F259711616C2C4B800DEEBDC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F259713816C2C4DA00DEEBDC /* BusiPDF.entitlements */,
 				F259711716C2C4B800DEEBDC /* BusiPDF-Info.plist */,
 				F259711816C2C4B800DEEBDC /* InfoPlist.strings */,
 				F259711B16C2C4B800DEEBDC /* main.m */,
@@ -209,6 +241,7 @@
 				F259712E16C2C4B900DEEBDC /* en */,
 			);
 			name = ALMasterViewController.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F259713016C2C4B900DEEBDC /* ALDetailViewController.xib */ = {
@@ -217,6 +250,7 @@
 				F259713116C2C4B900DEEBDC /* en */,
 			);
 			name = ALDetailViewController.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -325,6 +359,7 @@
 				F259713716C2C4B900DEEBDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
