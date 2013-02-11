@@ -53,11 +53,11 @@
     {
         if ([[s substringToIndex:1] isEqualToString:@"."]) continue;
         
-        [_objects addObject:@{
+        [_objects addObject:[@{
             @"url": [documentsPath stringByAppendingPathComponent:s],
             @"text": [s lastPathComponent],
             @"document": [NSNull null]
-        }];
+        } mutableCopy]];
     }
     NSLog(@"%@", _objects);
     [self.tableView reloadData];
@@ -129,7 +129,7 @@
 {
     NSDictionary *object = _objects[indexPath.row];
     if (!object[@"document"])
-        object[@"document"] = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:object[@"text"]] password:nil];
+        [(NSMutableDictionary *)object setValue:[[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:object[@"text"]] password:nil] forKey:@"document"];
     // TODO test - unsafe code
     // TODO improve by creating/setting ReaderViewController prop into detailVC
     self.detailViewController.detailItem = [[ReaderViewController alloc] initWithReaderDocument:object[@"document"]];
@@ -146,7 +146,7 @@
         NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
         [fileData writeToFile:[documentsPath stringByAppendingPathComponent:fileName] atomically:YES];
-        NSDictionary *obj = @{@"url": url, @"text": fileName, @"document": [NSNull null]};
+        NSDictionary *obj = [@{@"url": url, @"text": fileName, @"document": [NSNull null]} mutableCopy];
         [_objects insertObject:obj atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
