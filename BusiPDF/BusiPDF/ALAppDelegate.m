@@ -7,9 +7,7 @@
 //
 
 #import "ALAppDelegate.h"
-
 #import "ALMasterViewController.h"
-
 #import "ALDetailViewController.h"
 
 @implementation ALAppDelegate
