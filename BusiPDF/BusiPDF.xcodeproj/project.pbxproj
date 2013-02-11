@@ -10,6 +10,8 @@
 		6968F1C716C906AC0023EF7A /* ALDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553516C8E34500CDC6FC /* ALDetailViewController.m */; };
 		6968F1C816C906AC0023EF7A /* ALMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553716C8E34500CDC6FC /* ALMasterViewController.m */; };
 		6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6968F1C916C910B20023EF7A /* QuartzCore.framework */; };
+		696B703A16C9A2980064CB10 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696B703916C9A2980064CB10 /* ImageIO.framework */; };
+		696B703C16C9A29F0064CB10 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696B703B16C9A29F0064CB10 /* MessageUI.framework */; };
 		69CC553C16C8E35A00CDC6FC /* ALDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553A16C8E35A00CDC6FC /* ALDetailViewController.xib */; };
 		69CC553F16C8E36000CDC6FC /* ALMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553D16C8E36000CDC6FC /* ALMasterViewController.xib */; };
 		69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC554016C8E36A00CDC6FC /* InfoPlist.strings */; };
@@ -18,11 +20,6 @@
 		69DFE49916C971CE00D460FB /* ReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE44816C971CD00D460FB /* ReaderAppDelegate.m */; };
 		69DFE49A16C971CE00D460FB /* ReaderBookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE44A16C971CD00D460FB /* ReaderBookDelegate.m */; };
 		69DFE49B16C971CE00D460FB /* ReaderDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE44C16C971CD00D460FB /* ReaderDemoController.m */; };
-		69DFE49C16C971CE00D460FB /* AppIcon-057.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE44E16C971CD00D460FB /* AppIcon-057.png */; };
-		69DFE49D16C971CE00D460FB /* AppIcon-072.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE44F16C971CD00D460FB /* AppIcon-072.png */; };
-		69DFE49E16C971CE00D460FB /* AppIcon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45016C971CD00D460FB /* AppIcon-114.png */; };
-		69DFE49F16C971CE00D460FB /* AppIcon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45116C971CD00D460FB /* AppIcon-144.png */; };
-		69DFE4A016C971CE00D460FB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45216C971CD00D460FB /* Default-568h@2x.png */; };
 		69DFE4A116C971CE00D460FB /* Reader-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45316C971CD00D460FB /* Reader-Button-H.png */; };
 		69DFE4A216C971CE00D460FB /* Reader-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45416C971CD00D460FB /* Reader-Button-H@2x.png */; };
 		69DFE4A316C971CE00D460FB /* Reader-Button-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45516C971CD00D460FB /* Reader-Button-N.png */; };
@@ -37,11 +34,6 @@
 		69DFE4AC16C971CE00D460FB /* Reader-Print@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45E16C971CD00D460FB /* Reader-Print@2x.png */; };
 		69DFE4AD16C971CE00D460FB /* Reader-Thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45F16C971CD00D460FB /* Reader-Thumbs.png */; };
 		69DFE4AE16C971CE00D460FB /* Reader-Thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46016C971CD00D460FB /* Reader-Thumbs@2x.png */; };
-		69DFE4AF16C971CE00D460FB /* HISTORY.md in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46116C971CE00D460FB /* HISTORY.md */; };
-		69DFE4B016C971CE00D460FB /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46216C971CE00D460FB /* LICENSE.md */; };
-		69DFE4B116C971CE00D460FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE46316C971CE00D460FB /* main.m */; };
-		69DFE4B216C971CE00D460FB /* Reader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46416C971CE00D460FB /* Reader-Info.plist */; };
-		69DFE4B316C971CE00D460FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46916C971CE00D460FB /* README.md */; };
 		69DFE4B416C971CE00D460FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46B16C971CE00D460FB /* Localizable.strings */; };
 		69DFE4B516C971CE00D460FB /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE46E16C971CE00D460FB /* Reader.pdf */; };
 		69DFE4B616C971CE00D460FB /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE47116C971CE00D460FB /* CGPDFDocument.m */; };
@@ -74,18 +66,10 @@
 		F259712616C2C4B800DEEBDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F259712516C2C4B800DEEBDC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		69DFE4CB16C971CE00D460FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 69DFE46616C971CE00D460FB /* Reader.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = Reader;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6968F1C916C910B20023EF7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		696B703916C9A2980064CB10 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		696B703B16C9A29F0064CB10 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		69CC553416C8E34500CDC6FC /* ALDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDetailViewController.h; sourceTree = "<group>"; };
 		69CC553516C8E34500CDC6FC /* ALDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDetailViewController.m; sourceTree = "<group>"; };
 		69CC553616C8E34500CDC6FC /* ALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMasterViewController.h; sourceTree = "<group>"; };
@@ -120,13 +104,6 @@
 		69DFE45E16C971CD00D460FB /* Reader-Print@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Print@2x.png"; sourceTree = "<group>"; };
 		69DFE45F16C971CD00D460FB /* Reader-Thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Thumbs.png"; sourceTree = "<group>"; };
 		69DFE46016C971CD00D460FB /* Reader-Thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Thumbs@2x.png"; sourceTree = "<group>"; };
-		69DFE46116C971CE00D460FB /* HISTORY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HISTORY.md; sourceTree = "<group>"; };
-		69DFE46216C971CE00D460FB /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
-		69DFE46316C971CE00D460FB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		69DFE46416C971CE00D460FB /* Reader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Reader-Info.plist"; sourceTree = "<group>"; };
-		69DFE46516C971CE00D460FB /* Reader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reader-Prefix.pch"; sourceTree = "<group>"; };
-		69DFE46616C971CE00D460FB /* Reader.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Reader.xcodeproj; sourceTree = "<group>"; };
-		69DFE46916C971CE00D460FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		69DFE46C16C971CE00D460FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69DFE46D16C971CE00D460FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69DFE46E16C971CE00D460FB /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
@@ -191,9 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F259711016C2C4B800DEEBDC /* UIKit.framework in Frameworks */,
-				6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */,
 				F259711216C2C4B800DEEBDC /* Foundation.framework in Frameworks */,
 				F259711416C2C4B800DEEBDC /* CoreGraphics.framework in Frameworks */,
+				6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */,
+				696B703A16C9A2980064CB10 /* ImageIO.framework in Frameworks */,
+				696B703C16C9A29F0064CB10 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,13 +222,6 @@
 				69DFE44516C971CD00D460FB /* .gitignore */,
 				69DFE44616C971CD00D460FB /* Classes */,
 				69DFE44D16C971CD00D460FB /* Graphics */,
-				69DFE46116C971CE00D460FB /* HISTORY.md */,
-				69DFE46216C971CE00D460FB /* LICENSE.md */,
-				69DFE46316C971CE00D460FB /* main.m */,
-				69DFE46416C971CE00D460FB /* Reader-Info.plist */,
-				69DFE46516C971CE00D460FB /* Reader-Prefix.pch */,
-				69DFE46616C971CE00D460FB /* Reader.xcodeproj */,
-				69DFE46916C971CE00D460FB /* README.md */,
 				69DFE46A16C971CE00D460FB /* Resources */,
 				69DFE46F16C971CE00D460FB /* Sources */,
 			);
@@ -293,14 +265,6 @@
 				69DFE46016C971CD00D460FB /* Reader-Thumbs@2x.png */,
 			);
 			path = Graphics;
-			sourceTree = "<group>";
-		};
-		69DFE46716C971CE00D460FB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				69DFE4CC16C971CE00D460FB /* Reader.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		69DFE46A16C971CE00D460FB /* Resources */ = {
@@ -402,6 +366,8 @@
 				F259710F16C2C4B800DEEBDC /* UIKit.framework */,
 				F259711116C2C4B800DEEBDC /* Foundation.framework */,
 				F259711316C2C4B800DEEBDC /* CoreGraphics.framework */,
+				696B703916C9A2980064CB10 /* ImageIO.framework */,
+				696B703B16C9A29F0064CB10 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -473,28 +439,12 @@
 			mainGroup = F259710316C2C4B800DEEBDC;
 			productRefGroup = F259710D16C2C4B800DEEBDC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 69DFE46716C971CE00D460FB /* Products */;
-					ProjectRef = 69DFE46616C971CE00D460FB /* Reader.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F259710B16C2C4B800DEEBDC /* BusiPDF */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		69DFE4CC16C971CE00D460FB /* Reader.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Reader.app;
-			remoteRef = 69DFE4CB16C971CE00D460FB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F259710A16C2C4B800DEEBDC /* Resources */ = {
@@ -509,11 +459,6 @@
 				69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */,
 				69CC554516C8EF8F00CDC6FC /* finance.png in Resources */,
 				69DFE49816C971CE00D460FB /* .gitignore in Resources */,
-				69DFE49C16C971CE00D460FB /* AppIcon-057.png in Resources */,
-				69DFE49D16C971CE00D460FB /* AppIcon-072.png in Resources */,
-				69DFE49E16C971CE00D460FB /* AppIcon-114.png in Resources */,
-				69DFE49F16C971CE00D460FB /* AppIcon-144.png in Resources */,
-				69DFE4A016C971CE00D460FB /* Default-568h@2x.png in Resources */,
 				69DFE4A116C971CE00D460FB /* Reader-Button-H.png in Resources */,
 				69DFE4A216C971CE00D460FB /* Reader-Button-H@2x.png in Resources */,
 				69DFE4A316C971CE00D460FB /* Reader-Button-N.png in Resources */,
@@ -528,10 +473,6 @@
 				69DFE4AC16C971CE00D460FB /* Reader-Print@2x.png in Resources */,
 				69DFE4AD16C971CE00D460FB /* Reader-Thumbs.png in Resources */,
 				69DFE4AE16C971CE00D460FB /* Reader-Thumbs@2x.png in Resources */,
-				69DFE4AF16C971CE00D460FB /* HISTORY.md in Resources */,
-				69DFE4B016C971CE00D460FB /* LICENSE.md in Resources */,
-				69DFE4B216C971CE00D460FB /* Reader-Info.plist in Resources */,
-				69DFE4B316C971CE00D460FB /* README.md in Resources */,
 				69DFE4B416C971CE00D460FB /* Localizable.strings in Resources */,
 				69DFE4B516C971CE00D460FB /* Reader.pdf in Resources */,
 			);
@@ -551,7 +492,6 @@
 				69DFE49916C971CE00D460FB /* ReaderAppDelegate.m in Sources */,
 				69DFE49A16C971CE00D460FB /* ReaderBookDelegate.m in Sources */,
 				69DFE49B16C971CE00D460FB /* ReaderDemoController.m in Sources */,
-				69DFE4B116C971CE00D460FB /* main.m in Sources */,
 				69DFE4B616C971CE00D460FB /* CGPDFDocument.m in Sources */,
 				69DFE4B716C971CE00D460FB /* ReaderConstants.m in Sources */,
 				69DFE4B816C971CE00D460FB /* ReaderContentPage.m in Sources */,
