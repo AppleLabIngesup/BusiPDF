@@ -6,10 +6,12 @@
 //  Copyright (c) 2013 Ingesup. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ALDetailViewController.h"
 
 @interface ALDetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property(strong, nonatomic) UIPopoverController *masterPopoverController;
+
 - (void)configureView;
 @end
 
@@ -19,32 +21,67 @@
 
 - (void)setDetailItem:(id)newDetailItem
 {
-    if (_detailItem != newDetailItem) {
+    if (_detailItem != newDetailItem)
+    {
         _detailItem = newDetailItem;
-        
+
         // Update the view.
         [self configureView];
     }
 
-    if (self.masterPopoverController != nil) {
+    if (self.masterPopoverController != nil)
+    {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
+    if (self.detailItem)
+    {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
+}
+
+- (void)spinLayer:(CALayer *)inLayer duration:(CFTimeInterval)inDuration
+        direction:(int)direction
+{
+    CABasicAnimation* rotationAnimation;
+
+    // Rotate about the z axis
+    rotationAnimation =
+            [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+
+    // Rotate 360 degress, in direction specified
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 * direction];
+
+    // Perform the rotation over this many seconds
+    rotationAnimation.duration = inDuration;
+
+    // Set the pacing of the animation
+    rotationAnimation.timingFunction =
+            [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+
+    // Add animation to the layer and make it so
+    [inLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+
+    self.v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finance"]];
+    [self.view addSubview:self.v];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(rotate) userInfo:nil repeats:YES];
+}
+
+- (void)rotate
+{
+    [self spinLayer:self.v.layer duration:1 direction:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,12 +93,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         self.title = NSLocalizedString(@"Detail", @"Detail");
     }
     return self;
 }
-							
+
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController

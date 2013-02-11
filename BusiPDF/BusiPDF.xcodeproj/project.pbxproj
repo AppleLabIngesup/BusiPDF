@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6968F1C716C906AC0023EF7A /* ALDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553516C8E34500CDC6FC /* ALDetailViewController.m */; };
+		6968F1C816C906AC0023EF7A /* ALMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553716C8E34500CDC6FC /* ALMasterViewController.m */; };
+		6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6968F1C916C910B20023EF7A /* QuartzCore.framework */; };
 		69CC553C16C8E35A00CDC6FC /* ALDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553A16C8E35A00CDC6FC /* ALDetailViewController.xib */; };
 		69CC553F16C8E36000CDC6FC /* ALMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553D16C8E36000CDC6FC /* ALMasterViewController.xib */; };
 		69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC554016C8E36A00CDC6FC /* InfoPlist.strings */; };
+		69CC554516C8EF8F00CDC6FC /* finance.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CC554416C8EF8F00CDC6FC /* finance.png */; };
 		F259711016C2C4B800DEEBDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259710F16C2C4B800DEEBDC /* UIKit.framework */; };
 		F259711216C2C4B800DEEBDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259711116C2C4B800DEEBDC /* Foundation.framework */; };
 		F259711416C2C4B800DEEBDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259711316C2C4B800DEEBDC /* CoreGraphics.framework */; };
@@ -21,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6968F1C916C910B20023EF7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		69CC553416C8E34500CDC6FC /* ALDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDetailViewController.h; sourceTree = "<group>"; };
 		69CC553516C8E34500CDC6FC /* ALDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDetailViewController.m; sourceTree = "<group>"; };
 		69CC553616C8E34500CDC6FC /* ALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMasterViewController.h; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		69CC553B16C8E35A00CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALDetailViewController.xib; sourceTree = "<group>"; };
 		69CC553E16C8E36000CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALMasterViewController.xib; sourceTree = "<group>"; };
 		69CC554116C8E36A00CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Controllers/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69CC554416C8EF8F00CDC6FC /* finance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finance.png; sourceTree = "<group>"; };
 		F259710C16C2C4B800DEEBDC /* BusiPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusiPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F259710F16C2C4B800DEEBDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F259711116C2C4B800DEEBDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F259711016C2C4B800DEEBDC /* UIKit.framework in Frameworks */,
+				6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */,
 				F259711216C2C4B800DEEBDC /* Foundation.framework in Frameworks */,
 				F259711416C2C4B800DEEBDC /* CoreGraphics.framework in Frameworks */,
 			);
@@ -75,6 +82,14 @@
 				69CC553716C8E34500CDC6FC /* ALMasterViewController.m */,
 			);
 			name = Master;
+			sourceTree = "<group>";
+		};
+		69CC554316C8EF8F00CDC6FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69CC554416C8EF8F00CDC6FC /* finance.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		69FB7E4816C845810002D763 /* AppDelegate */ = {
@@ -115,6 +130,7 @@
 		F259710E16C2C4B800DEEBDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6968F1C916C910B20023EF7A /* QuartzCore.framework */,
 				F259710F16C2C4B800DEEBDC /* UIKit.framework */,
 				F259711116C2C4B800DEEBDC /* Foundation.framework */,
 				F259711316C2C4B800DEEBDC /* CoreGraphics.framework */,
@@ -125,6 +141,7 @@
 		F259711516C2C4B800DEEBDC /* BusiPDF */ = {
 			isa = PBXGroup;
 			children = (
+				69CC554316C8EF8F00CDC6FC /* Resources */,
 				69FB7E4916C845B70002D763 /* Controllers */,
 				69FB7E4816C845810002D763 /* AppDelegate */,
 				F259711616C2C4B800DEEBDC /* Supporting Files */,
@@ -205,6 +222,7 @@
 				69CC553C16C8E35A00CDC6FC /* ALDetailViewController.xib in Resources */,
 				69CC553F16C8E36000CDC6FC /* ALMasterViewController.xib in Resources */,
 				69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */,
+				69CC554516C8EF8F00CDC6FC /* finance.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6968F1C716C906AC0023EF7A /* ALDetailViewController.m in Sources */,
+				6968F1C816C906AC0023EF7A /* ALMasterViewController.m in Sources */,
 				F259711C16C2C4B800DEEBDC /* main.m in Sources */,
 				F259712016C2C4B800DEEBDC /* ALAppDelegate.m in Sources */,
 			);
