@@ -1,0 +1,3 @@
+[submodule "Libs/Reader"]
+	path = Libs/Reader
+	url = https://OtaK@github.com/AppleLabIngesup/Reader.git
