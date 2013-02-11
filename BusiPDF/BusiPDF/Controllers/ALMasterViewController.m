@@ -7,8 +7,8 @@
 //
 
 #import "ALMasterViewController.h"
-
 #import "ALDetailViewController.h"
+#import "ReaderViewController.h"
 
 @interface ALMasterViewController () {
     NSMutableArray *_objects;
@@ -125,26 +125,14 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object[@"document"];
+    if (!object[@"document"])
+        object[@"document"] = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:object[@"text"]] password:nil];
+    // TODO test - unsafe code
+    // TODO improve by creating/setting ReaderViewController prop into detailVC
+    self.detailViewController.detailItem = [[ReaderViewController alloc] initWithReaderDocument:object[@"document"]];
 }
 
 #pragma mark UIAlertViewDelegate
