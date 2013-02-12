@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "ALDetailViewController.h"
+#import "ReaderViewController.h"
 
 @interface ALDetailViewController ()
 @property(strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -38,24 +39,35 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem)
+    if (!self.detailItem) return;
+    static dispatch_once_t meh;
+    dispatch_once(&meh, ^
     {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+        self.readerController = [[ReaderViewController alloc] initWithReaderDocument:self.detailItem];
+        self.readerController.delegate = self;
+        [self.view addSubview:self.readerController.view];
+    });
+    //TODO clear dat shit
+    [self.readerController initWithReaderDocument:self.detailItem];
 }
+
+- (void)dismissReaderViewController:(ReaderViewController *)viewController
+{
+    // do nothing meh
+}
+
 
 - (void)spinLayer:(CALayer *)inLayer duration:(CFTimeInterval)inDuration
         direction:(int)direction
 {
-    CABasicAnimation* rotationAnimation;
+    CABasicAnimation *rotationAnimation;
 
     // Rotate about the z axis
     rotationAnimation =
             [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
 
     // Rotate 360 degress, in direction specified
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 * direction];
+    rotationAnimation.toValue = @(M_PI * 2.0 * direction);
 
     // Perform the rotation over this many seconds
     rotationAnimation.duration = inDuration;
@@ -72,11 +84,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    //[self configureView];
 
-    self.v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finance"]];
+    /*self.v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finance"]];
     [self.view addSubview:self.v];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(rotate) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(rotate) userInfo:nil repeats:YES];*/
 }
 
 - (void)rotate

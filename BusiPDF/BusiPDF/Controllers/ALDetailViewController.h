@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReaderViewController.h"
 
-@interface ALDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@class ReaderViewController;
+
+@interface ALDetailViewController : UIViewController <UISplitViewControllerDelegate, ReaderViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
-
+@property (strong, nonatomic) ReaderViewController *readerController;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property(nonatomic, strong) UIImageView *v;
 @end
