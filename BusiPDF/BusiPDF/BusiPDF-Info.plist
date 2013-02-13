@@ -44,10 +44,23 @@
             <string>UIInterfaceOrientationLandscapeLeft</string>
             <string>UIInterfaceOrientationLandscapeRight</string>
         </array>
-        <key>LSItemContentTypes</key>
-        <array>
-            <string>com.adobe.pdf</string>
-        </array>
+        <key>CFBundleDocumentTypes</key>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Business PDF Document</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleTypeIconFiles</key>
+            <array>
+                <string>finance.png</string>
+            </array>
+            <key>LSContentItemTypes</key>
+            <array>
+                <string>com.adobe.pdf</string>
+            </array>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+        </dict>
         <key>UISupportedInterfaceOrientations~ipad</key>
         <array>
             <string>UIInterfaceOrientationPortrait</string>

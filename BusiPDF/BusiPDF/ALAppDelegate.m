@@ -30,6 +30,22 @@
     self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
+
+    if (!!launchOptions[UIApplicationLaunchOptionsURLKey])
+    {
+        NSURL *fileUrl = launchOptions[UIApplicationLaunchOptionsURLKey];
+        NSString *documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        NSString *fileName = fileUrl.absoluteString.lastPathComponent;
+        NSURL *destUrl = [NSURL fileURLWithPath:[documentsPath stringByAppendingPathComponent:fileName]];
+        [[NSFileManager defaultManager] copyItemAtURL:fileUrl toURL:destUrl error:NULL];
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:@{
+            @"text": fileName,
+            @"document": [NSNull null],
+            @"url": fileUrl
+        }];
+        [masterViewController openReaderDocument:dict];
+    }
+
     return YES;
 }
 

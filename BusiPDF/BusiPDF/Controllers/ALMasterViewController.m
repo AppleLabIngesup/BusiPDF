@@ -132,13 +132,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *object = _objects[(NSUInteger) indexPath.row];
+    NSMutableDictionary *object = _objects[(NSUInteger) indexPath.row];
+    [self openReaderDocument:object];
+
+}
+
+- (void)openReaderDocument:(NSMutableDictionary *)documentDictionary
+{
+    // If handled from external app
+    if ([_objects indexOfObject:documentDictionary] == NSNotFound)
+        [_objects addObject:documentDictionary];
+
     ReaderDocument *readerDocument;
-    ReaderDocument *docDict = object[@"document"];
+    ReaderDocument *docDict = documentDictionary[@"document"];
     if (!docDict || [docDict isEqual:[NSNull null]])
     {
-        readerDocument = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:object[@"text"]] password:nil];
-        [(NSMutableDictionary *) object setValue:readerDocument forKey:@"document"];
+        readerDocument = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:documentDictionary[@"text"]] password:nil];
+        [(NSMutableDictionary *) documentDictionary setValue:readerDocument forKey:@"document"];
     }
     else
         readerDocument = docDict;

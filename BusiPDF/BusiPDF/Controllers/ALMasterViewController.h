@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) ALDetailViewController *detailViewController;
 
+- (void)openReaderDocument:(NSMutableDictionary *)documentDictionary;
+
 @end
