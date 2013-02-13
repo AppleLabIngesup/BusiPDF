@@ -13,7 +13,7 @@
 
 @interface ALDetailViewController : UIViewController <UISplitViewControllerDelegate, ReaderViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) ReaderDocument *detailItem;
 @property (strong, nonatomic) ReaderViewController *readerController;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property(nonatomic, strong) UIImageView *v;

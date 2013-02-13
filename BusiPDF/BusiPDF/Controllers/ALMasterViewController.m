@@ -8,7 +8,6 @@
 
 #import "ALMasterViewController.h"
 #import "ALDetailViewController.h"
-#import "ReaderViewController.h"
 
 @interface ALMasterViewController ()
 {
@@ -148,7 +147,7 @@
     if (!docDict || [docDict isEqual:[NSNull null]])
     {
         readerDocument = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:documentDictionary[@"text"]] password:nil];
-        [(NSMutableDictionary *) documentDictionary setValue:readerDocument forKey:@"document"];
+        [documentDictionary setValue:readerDocument forKey:@"document"];
     }
     else
         readerDocument = docDict;
