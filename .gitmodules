@@ -1,3 +1,6 @@
 [submodule "Libs/Reader"]
 	path = Libs/Reader
 	url = https://OtaK@github.com/AppleLabIngesup/Reader.git
+[submodule "Libs/MKNetworkKit"]
+	path = Libs/MKNetworkKit
+	url = https://OtaK@github.com/MugunthKumar/MKNetworkKit.git
