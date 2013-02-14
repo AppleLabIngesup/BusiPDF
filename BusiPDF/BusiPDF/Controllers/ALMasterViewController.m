@@ -12,7 +12,7 @@
 @interface ALMasterViewController ()
 {
     NSMutableArray *_objects;
-    NSString *documentsPath;
+    NSString *_documentsPath;
 }
 @end
 
@@ -40,10 +40,10 @@
     self.navigationItem.rightBarButtonItem = addButton;
 
     // Add existing files from bundle/Documents
-    documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    _documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSError *error = nil;
     NSArray *array = [[NSFileManager defaultManager]
-            contentsOfDirectoryAtPath:documentsPath
+            contentsOfDirectoryAtPath:_documentsPath
                                 error:&error];
     NSLog(@"%@", array);
 
@@ -55,7 +55,7 @@
         if ([[s substringToIndex:1] isEqualToString:@"."]) continue;
 
         [_objects addObject:[@{
-                @"url" : [documentsPath stringByAppendingPathComponent:s],
+                @"url" : [_documentsPath stringByAppendingPathComponent:s],
                 @"text" : [s lastPathComponent],
                 @"document" : [NSNull null]
         } mutableCopy]];
@@ -119,7 +119,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [[NSFileManager defaultManager] removeItemAtPath:[documentsPath stringByAppendingPathComponent:_objects[(NSUInteger) indexPath.row][@"text"]] error:NULL];
+        [[NSFileManager defaultManager] removeItemAtPath:[_documentsPath stringByAppendingPathComponent:_objects[(NSUInteger) indexPath.row][@"text"]] error:NULL];
         [_objects removeObjectAtIndex:(NSUInteger) indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -146,7 +146,7 @@
     ReaderDocument *docDict = documentDictionary[@"document"];
     if (!docDict || [docDict isEqual:[NSNull null]])
     {
-        readerDocument = [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:documentDictionary[@"text"]] password:nil];
+        readerDocument = [[ReaderDocument alloc] initWithFilePath:[_documentsPath stringByAppendingPathComponent:documentDictionary[@"text"]] password:nil];
         [documentDictionary setValue:readerDocument forKey:@"document"];
     }
     else
@@ -166,8 +166,8 @@
         NSString *fileName = [url lastPathComponent];
         NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
 
-        [fileData writeToFile:[documentsPath stringByAppendingPathComponent:fileName] atomically:YES];
-        NSDictionary *obj = [@{@"url" : url, @"text" : fileName, @"document": [[ReaderDocument alloc] initWithFilePath:[documentsPath stringByAppendingPathComponent:fileName] password:nil]} mutableCopy];
+        [fileData writeToFile:[_documentsPath stringByAppendingPathComponent:fileName] atomically:YES];
+        NSDictionary *obj = [@{@"url" : url, @"text" : fileName, @"document": [[ReaderDocument alloc] initWithFilePath:[_documentsPath stringByAppendingPathComponent:fileName] password:nil]} mutableCopy];
         [_objects insertObject:obj atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
