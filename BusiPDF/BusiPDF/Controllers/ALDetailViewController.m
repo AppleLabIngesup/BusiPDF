@@ -40,13 +40,23 @@
 {
     // Update the user interface for the detail item.
     if (!self.detailItem) return;
-    if (!!self.readerController) // if one is already existing, throw away the view
+    /*if (!!self.readerController) // if one is already existing, throw away the view
         [self.readerController.view removeFromSuperview];
 
     // Then take that new one, yayyy
     self.readerController = [[ReaderViewController alloc] initWithReaderDocument:self.detailItem];
     self.readerController.delegate = self;
-    [self.view addSubview:self.readerController.view];
+    [self.readerController setToolbarHidden:NO];
+    [self.view addSubview:self.readerController.view];*/
+    static dispatch_once_t readerInit = 0;
+    if (readerInit != 0) // if has already been dispatched
+        [self.readerController setDocument:self.detailItem];
+
+    dispatch_once(&readerInit, ^{
+        self.readerController = [[ReaderViewController alloc] initWithReaderDocument:self.detailItem];
+        self.readerController.delegate = self;
+        [self.view addSubview:self.readerController.view];
+    });
 }
 
 - (void)dismissReaderViewController:(ReaderViewController *)viewController
