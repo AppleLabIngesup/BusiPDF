@@ -40,15 +40,13 @@
 {
     // Update the user interface for the detail item.
     if (!self.detailItem) return;
-    static dispatch_once_t meh;
-    dispatch_once(&meh, ^
-    {
-        self.readerController = [[ReaderViewController alloc] initWithReaderDocument:self.detailItem];
-        self.readerController.delegate = self;
-        [self.view addSubview:self.readerController.view];
-    });
-    //TODO clear dat shit
-    [self.readerController initWithReaderDocument:self.detailItem];
+    if (!!self.readerController) // if one is already existing, throw away the view
+        [self.readerController.view removeFromSuperview];
+
+    // Then take that new one, yayyy
+    self.readerController = [[ReaderViewController alloc] initWithReaderDocument:self.detailItem];
+    self.readerController.delegate = self;
+    [self.view addSubview:self.readerController.view];
 }
 
 - (void)dismissReaderViewController:(ReaderViewController *)viewController
@@ -88,12 +86,12 @@
 
     /*self.v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finance"]];
     [self.view addSubview:self.v];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(rotate) userInfo:nil repeats:YES];*/
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(rotate:self.v) userInfo:nil repeats:YES];*/
 }
 
-- (void)rotate
+- (void)rotateView:(UIView *)view
 {
-    [self spinLayer:self.v.layer duration:1 direction:1];
+    [self spinLayer:view.layer duration:1 direction:1];
 }
 
 - (void)didReceiveMemoryWarning
