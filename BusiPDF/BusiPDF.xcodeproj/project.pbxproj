@@ -64,6 +64,7 @@
 		69DFE4C716C971CE00D460FB /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE49316C971CE00D460FB /* ThumbsMainToolbar.m */; };
 		69DFE4C816C971CE00D460FB /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE49516C971CE00D460FB /* ThumbsViewController.m */; };
 		69DFE4C916C971CE00D460FB /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DFE49716C971CE00D460FB /* UIXToolbarView.m */; };
+		E5C15D6E9DD84203A3D37A8C /* ALNetEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C15AC13065C2714D8D11AF /* ALNetEngine.m */; };
 		F259711016C2C4B800DEEBDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259710F16C2C4B800DEEBDC /* UIKit.framework */; };
 		F259711216C2C4B800DEEBDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259711116C2C4B800DEEBDC /* Foundation.framework */; };
 		F259711416C2C4B800DEEBDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F259711316C2C4B800DEEBDC /* CoreGraphics.framework */; };
@@ -166,6 +167,8 @@
 		69DFE49516C971CE00D460FB /* ThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsViewController.m; sourceTree = "<group>"; };
 		69DFE49616C971CE00D460FB /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIXToolbarView.h; sourceTree = "<group>"; };
 		69DFE49716C971CE00D460FB /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
+		E5C1593A14E0DEE217B94650 /* ALNetEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALNetEngine.h; sourceTree = "<group>"; };
+		E5C15AC13065C2714D8D11AF /* ALNetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALNetEngine.m; sourceTree = "<group>"; };
 		F259710C16C2C4B800DEEBDC /* BusiPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusiPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F259710F16C2C4B800DEEBDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F259711116C2C4B800DEEBDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -388,6 +391,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		E5C151DD13D3315D96F9B50C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5C158ED2D71F59EC24A4728 /* ALNetEngine */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E5C158ED2D71F59EC24A4728 /* ALNetEngine */ = {
+			isa = PBXGroup;
+			children = (
+				E5C15AC13065C2714D8D11AF /* ALNetEngine.m */,
+				E5C1593A14E0DEE217B94650 /* ALNetEngine.h */,
+			);
+			name = ALNetEngine;
+			sourceTree = "<group>";
+		};
 		F259710316C2C4B800DEEBDC = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +449,7 @@
 				69FB7E4916C845B70002D763 /* Controllers */,
 				69FB7E4816C845810002D763 /* AppDelegate */,
 				F259711616C2C4B800DEEBDC /* Supporting Files */,
+				E5C151DD13D3315D96F9B50C /* Utils */,
 			);
 			path = BusiPDF;
 			sourceTree = "<group>";
@@ -567,6 +588,7 @@
 				69881BA916CD678100E92FD0 /* MKNetworkEngine.m in Sources */,
 				69881BAA16CD678100E92FD0 /* MKNetworkOperation.m in Sources */,
 				69881BAB16CD678100E92FD0 /* Reachability.m in Sources */,
+				E5C15D6E9DD84203A3D37A8C /* ALNetEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -164,13 +164,33 @@
     {
         NSString *url = [alertView textFieldAtIndex:0].text;
         NSString *fileName = [url lastPathComponent];
-        NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
 
-        [fileData writeToFile:[_documentsPath stringByAppendingPathComponent:fileName] atomically:YES];
-        NSDictionary *obj = [@{@"url" : url, @"text" : fileName, @"document": [[ReaderDocument alloc] initWithFilePath:[_documentsPath stringByAppendingPathComponent:fileName] password:nil]} mutableCopy];
-        [_objects insertObject:obj atIndex:0];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        MKNetworkOperation *op = [[ALNetEngine instance] operationWithURLString:url];
+        [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
+        {
+            NSData *fileData = completedOperation.responseData;
+            if (!!fileData)
+            {
+                [fileData writeToFile:[_documentsPath stringByAppendingPathComponent:fileName] atomically:YES];
+                NSDictionary *obj = [@{@"url" : url, @"text" : fileName, @"document": [[ReaderDocument alloc] initWithFilePath:[_documentsPath stringByAppendingPathComponent:fileName] password:nil]} mutableCopy];
+                [_objects insertObject:obj atIndex:0];
+                NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0]];
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                });
+            }
+        }
+        errorHandler:^(MKNetworkOperation *completedOperation, NSError *error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Specified URL could not be found!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            });
+        }];
+
+        [[ALNetEngine instance] enqueueOperation:op];
     }
 }
 
