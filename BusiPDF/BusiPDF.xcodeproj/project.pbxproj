@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3434C59117DDC9350C05D35B /* ReaderAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434CBD04EBDCA7D52277C9B /* ReaderAnnotations.m */; };
 		6968F1C716C906AC0023EF7A /* ALDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553516C8E34500CDC6FC /* ALDetailViewController.m */; };
 		6968F1C816C906AC0023EF7A /* ALMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC553716C8E34500CDC6FC /* ALMasterViewController.m */; };
 		6968F1CA16C910B20023EF7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6968F1C916C910B20023EF7A /* QuartzCore.framework */; };
@@ -76,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3434C69667342D66D9FA7AB6 /* ReaderAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderAnnotations.h; sourceTree = "<group>"; };
+		3434CBD04EBDCA7D52277C9B /* ReaderAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderAnnotations.m; sourceTree = "<group>"; };
 		6968F1C916C910B20023EF7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		696B703916C9A2980064CB10 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		696B703B16C9A29F0064CB10 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -369,6 +372,8 @@
 				69DFE49516C971CE00D460FB /* ThumbsViewController.m */,
 				69DFE49616C971CE00D460FB /* UIXToolbarView.h */,
 				69DFE49716C971CE00D460FB /* UIXToolbarView.m */,
+				3434CBD04EBDCA7D52277C9B /* ReaderAnnotations.m */,
+				3434C69667342D66D9FA7AB6 /* ReaderAnnotations.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 				69881BAA16CD678100E92FD0 /* MKNetworkOperation.m in Sources */,
 				69881BAB16CD678100E92FD0 /* Reachability.m in Sources */,
 				E5C15D6E9DD84203A3D37A8C /* ALNetEngine.m in Sources */,
+				3434C59117DDC9350C05D35B /* ReaderAnnotations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
