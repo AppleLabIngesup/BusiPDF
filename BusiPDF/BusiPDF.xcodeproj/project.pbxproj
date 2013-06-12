@@ -18,7 +18,6 @@
 		69881BA516CD678100E92FD0 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9316CD678100E92FD0 /* NSDictionary+RequestEncoding.m */; };
 		69881BA616CD678100E92FD0 /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9516CD678100E92FD0 /* NSString+MKNetworkKitAdditions.m */; };
 		69881BA716CD678100E92FD0 /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9716CD678100E92FD0 /* UIAlertView+MKNetworkKitAdditions.m */; };
-		69881BA816CD678100E92FD0 /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9916CD678100E92FD0 /* UIImageView+MKNetworkKitAdditions.m */; };
 		69881BA916CD678100E92FD0 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9B16CD678100E92FD0 /* MKNetworkEngine.m */; };
 		69881BAA16CD678100E92FD0 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881B9E16CD678100E92FD0 /* MKNetworkOperation.m */; };
 		69881BAB16CD678100E92FD0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 69881BA116CD678100E92FD0 /* Reachability.m */; };
@@ -28,7 +27,6 @@
 		69CC553C16C8E35A00CDC6FC /* ALDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553A16C8E35A00CDC6FC /* ALDetailViewController.xib */; };
 		69CC553F16C8E36000CDC6FC /* ALMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CC553D16C8E36000CDC6FC /* ALMasterViewController.xib */; };
 		69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC554016C8E36A00CDC6FC /* InfoPlist.strings */; };
-		69CC554516C8EF8F00CDC6FC /* finance.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CC554416C8EF8F00CDC6FC /* finance.png */; };
 		69DFE49816C971CE00D460FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE44516C971CD00D460FB /* .gitignore */; };
 		69DFE4A116C971CE00D460FB /* Reader-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45316C971CD00D460FB /* Reader-Button-H.png */; };
 		69DFE4A216C971CE00D460FB /* Reader-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DFE45416C971CD00D460FB /* Reader-Button-H@2x.png */; };
@@ -111,7 +109,6 @@
 		69CC553B16C8E35A00CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALDetailViewController.xib; sourceTree = "<group>"; };
 		69CC553E16C8E36000CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ALMasterViewController.xib; sourceTree = "<group>"; };
 		69CC554116C8E36A00CDC6FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Controllers/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		69CC554416C8EF8F00CDC6FC /* finance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finance.png; sourceTree = "<group>"; };
 		69DFE44516C971CD00D460FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		69DFE45316C971CD00D460FB /* Reader-Button-H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Button-H.png"; sourceTree = "<group>"; };
 		69DFE45416C971CD00D460FB /* Reader-Button-H@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Button-H@2x.png"; sourceTree = "<group>"; };
@@ -273,7 +270,6 @@
 		69CC554316C8EF8F00CDC6FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				69CC554416C8EF8F00CDC6FC /* finance.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -533,7 +529,6 @@
 				69CC553C16C8E35A00CDC6FC /* ALDetailViewController.xib in Resources */,
 				69CC553F16C8E36000CDC6FC /* ALMasterViewController.xib in Resources */,
 				69CC554216C8E36A00CDC6FC /* InfoPlist.strings in Resources */,
-				69CC554516C8EF8F00CDC6FC /* finance.png in Resources */,
 				69DFE49816C971CE00D460FB /* .gitignore in Resources */,
 				69DFE4A116C971CE00D460FB /* Reader-Button-H.png in Resources */,
 				69DFE4A216C971CE00D460FB /* Reader-Button-H@2x.png in Resources */,
@@ -589,7 +584,6 @@
 				69881BA516CD678100E92FD0 /* NSDictionary+RequestEncoding.m in Sources */,
 				69881BA616CD678100E92FD0 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				69881BA716CD678100E92FD0 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
-				69881BA816CD678100E92FD0 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				69881BA916CD678100E92FD0 /* MKNetworkEngine.m in Sources */,
 				69881BAA16CD678100E92FD0 /* MKNetworkOperation.m in Sources */,
 				69881BAB16CD678100E92FD0 /* Reachability.m in Sources */,
